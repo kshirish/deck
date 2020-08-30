@@ -1,0 +1,32 @@
+.tab {
+  font-family: 'Manrope';
+  font-size: 14px;
+}
+
+.tab ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 500;
+  display: flex;
+}
+
+.tab li {
+  margin: 0 15px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.tab li.active {
+  border-bottom: 3px solid #0098ab;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.tab li:hover {
+  border-bottom: 3px solid #0098ab44;
+}
+
+.tab .tab-pane {
+  padding: 15px;
+}

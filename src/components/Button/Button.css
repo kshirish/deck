@@ -1,0 +1,75 @@
+.button {
+  outline: 0;
+  background: none;
+  cursor: pointer;
+  margin-right: 5px;
+  font-weight: 500;
+  font-family: 'Manrope';
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #212121;
+  position: relative;
+  z-index: 0;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+}
+
+.button.button-primary {
+  border: none;
+  background-color: #f65858;
+  color: #ffffff;
+}
+
+.button.button-secondary {
+  border: none;
+  background-color: transparent;
+  color: #0098ab;
+}
+
+.button.button-tiny {
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+.button.button-small {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.button.button-medium {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.button.button-large {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.button.button-huge {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+
+.button.button-icon-left img {
+  width: 15px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.button.button-icon-right img {
+  width: 15px;
+  vertical-align: sub;
+  margin-left: 5px;
+}
+
+.button.button-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button.button-block {
+  width: 100%;
+}

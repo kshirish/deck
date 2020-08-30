@@ -1,0 +1,24 @@
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Manrope';
+  border-radius: 5px;
+  margin: 0 2px;
+  text-transform: capitalize;
+  background-color: #e8e8e8;
+  color: #666666;
+}
+
+.badge.badge-icon-left img {
+  width: 15px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.badge.badge-icon-right img {
+  width: 15px;
+  vertical-align: sub;
+  margin-left: 5px;
+}

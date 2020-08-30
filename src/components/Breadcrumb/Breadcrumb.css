@@ -1,0 +1,25 @@
+.breadcrumb {
+  list-style: none;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Manrope';
+  font-size: 14px;
+}
+
+.breadcrumb .breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-item.link {
+  color: #297cbb;
+}
+
+.breadcrumb-divider {
+  padding: 0 5px;
+  display: inline-block;
+}
+
+.breadcrumb .breadcrumb-item.active {
+  color: #616161;
+}

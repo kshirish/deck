@@ -1,0 +1,39 @@
+.toaster {
+  position: fixed;
+  font-family: 'Manrope';
+  font-size: 14px;
+}
+
+.toaster .toast {
+  background: #424242;
+  color: #ffffff;
+  z-index: 3;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.toast .close {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.toast.toast-success {
+  color: #23621e;
+  background-color: #e8f5e9;
+}
+
+.toast.toast-info {
+  color: #0f62a4;
+  background-color: #e3f2fd;
+}
+
+.toast.toast-warning {
+  color: #70600c;
+  background-color: #fffddb;
+}
+
+.toast.toast-error {
+  color: #9f231a;
+  background-color: #ffebee;
+}

@@ -1,0 +1,68 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Manrope';
+  font-size: 14px;
+}
+
+.table.bordered {
+  border: 1px solid #e4e4e4;
+}
+
+.table .table-header-cell,
+.table .table-cell {
+  padding: 15px;
+  text-align: left;
+}
+
+.table.compact .table-header-cell,
+.table.compact .table-cell {
+  padding: 10px;
+}
+
+.table .table-header-cell {
+  font-weight: 600;
+}
+
+.table.bordered .table-header-cell,
+.table.bordered .table-cell {
+  border: 1px solid #e4e4e4;
+}
+
+.table.striped .table-body .table-row:nth-child(2n + 1) {
+  background-color: #f5f5f5;
+}
+
+.table.highlighted .table-row:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.table.centered .table-header-cell,
+.table.centered .table-body {
+  text-align: center;
+}
+
+.table.sortable .table-header-cell {
+  cursor: pointer;
+}
+
+.table.sortable .table-header-cell.ascending:after,
+.table.sortable .table-header-cell.descending:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.table.sortable .table-header-cell.ascending:after {
+  border-top: 5px solid #333333;
+}
+
+.table.sortable .table-header-cell.descending:after {
+  border-bottom: 5px solid #333333;
+}

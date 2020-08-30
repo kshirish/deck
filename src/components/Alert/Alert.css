@@ -1,0 +1,30 @@
+.alert {
+  padding: 20px;
+  margin-bottom: 15px;
+  font-family: 'Manrope';
+  font-size: 14px;
+}
+
+.alert.alert-success {
+  color: #23621e;
+  background-color: #e8f5e9;
+  border-left: 2px solid #a5d6a7;
+}
+
+.alert.alert-info {
+  color: #0f62a4;
+  background-color: #e3f2fd;
+  border-left: 2px solid #90caf9;
+}
+
+.alert.alert-warning {
+  color: #70600c;
+  background-color: #fffddb;
+  border-left: 2px solid #fff176;
+}
+
+.alert.alert-error {
+  color: #9f231a;
+  background-color: #ffebee;
+  border-left: 2px solid #ef9a9a;
+}
