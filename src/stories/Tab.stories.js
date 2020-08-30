@@ -20,7 +20,7 @@ export const Basic = () => {
   return (
     <Tab
       activeTab={activeTab}
-      onChange={(newActiveTab) => setActiveTab(newActiveTab)}
+      onChange={newActiveTab => setActiveTab(newActiveTab)}
       panes={panes}
     />
   );

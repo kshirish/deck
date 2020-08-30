@@ -41,7 +41,7 @@ const Toaster = ({
 
   return (
     <div className={classNames.join(' ')} style={styles} {...props}>
-      {messages.map((message) => (
+      {messages.map(message => (
         <div key={message.id} className={`toast toast-${message.type}`}>
           {message.text}
           {' '}

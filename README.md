@@ -2,6 +2,8 @@
 
 Deck is the react toolset to build front end apps.
 
+<img src="./public/logo.png" width="200" alt="Deck">
+
 <!-- ### Installation
 
 ```shell

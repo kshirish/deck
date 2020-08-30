@@ -16,16 +16,16 @@ const Tab = ({
   const styles = { ...style };
 
   const classNames = ['tab', className];
-  const activePane = panes.find((pane) => pane.menuItem === activeTab);
+  const activePane = panes.find(pane => pane.menuItem === activeTab);
 
   return (
     <div className={classNames.join(' ')} style={styles} {...props}>
       <ul>
-        {panes.map((pane) => (
+        {panes.map(pane => (
           <li
             className={pane.menuItem === activeTab ? 'active' : ''}
             key={pane.menuItem}
-            onClick={(e) => onChange(pane.menuItem)}
+            onClick={e => onChange(pane.menuItem)}
           >
             {pane.menuItem}
           </li>

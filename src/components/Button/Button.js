@@ -19,7 +19,7 @@ const Button = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (color) {
     styles.backgroundColor = color;
