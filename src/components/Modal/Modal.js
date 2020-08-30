@@ -18,7 +18,7 @@ const Modal = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const dialogRef = useRef(null);
   const classNames = ['modal', className];

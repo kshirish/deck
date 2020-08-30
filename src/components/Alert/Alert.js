@@ -12,7 +12,7 @@ const Alert = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['alert', `alert-${type}`, className];
 

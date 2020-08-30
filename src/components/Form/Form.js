@@ -11,7 +11,7 @@ const Form = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = [className];
 

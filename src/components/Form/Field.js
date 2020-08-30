@@ -8,7 +8,7 @@ const Field = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['form-field', className];
 

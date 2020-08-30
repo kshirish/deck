@@ -56,21 +56,24 @@ export const Basic = () => (
         name="languages"
         value="js"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       Javascript
       <input
         type="checkbox"
         name="languages"
         value="html"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       HTML
       <input
         type="checkbox"
         name="languages"
         value="css"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       CSS
     </Form.Field>
     <Form.Field>
@@ -80,21 +83,24 @@ export const Basic = () => (
         name="gender"
         value="m"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       Male
       <input
         type="radio"
         name="gender"
         value="f"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       Female
       <input
         type="radio"
         name="gender"
         value="o"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      />{' '}
+      />
+      {' '}
       Others
     </Form.Field>
     <Form.Field>
@@ -133,7 +139,7 @@ export const Basic = () => (
         id="bio"
         rows="3"
         onChange={(e) => console.log(e.target.name, e.target.value)}
-      ></textarea>
+      />
     </Form.Field>
     <Button>Submit</Button>
   </Form>

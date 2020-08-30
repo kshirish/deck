@@ -15,7 +15,7 @@ const Popover = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const tooltipRef = useRef(null);
   const classNames = ['popover', className];
@@ -26,7 +26,9 @@ const Popover = ({
 
     tooltipEl.style.display = 'inline-block';
 
-    let top, left, bottom, right;
+    let top;
+    let left;
+
     switch (align) {
       case 'top':
         top = dim.top - tooltipEl.clientHeight - margin * 2;
@@ -44,6 +46,7 @@ const Popover = ({
         top = dim.top + (dim.height - tooltipEl.clientHeight - margin * 2) / 2;
         left = dim.left + dim.width;
         break;
+      default:
     }
 
     tooltipEl.style.top = `${top}px`;

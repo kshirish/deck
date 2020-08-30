@@ -8,7 +8,7 @@ const Body = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['table-body', className];
 

@@ -10,7 +10,7 @@ const Section = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = [
     'breadcrumb-item',

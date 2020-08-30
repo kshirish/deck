@@ -8,7 +8,7 @@ const Header = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['card-header', className];
 

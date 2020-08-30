@@ -9,7 +9,7 @@ const Image = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['card-image', className];
 

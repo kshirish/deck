@@ -13,7 +13,7 @@ const Tab = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['tab', className];
   const activePane = panes.find((pane) => pane.menuItem === activeTab);

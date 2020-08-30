@@ -13,7 +13,7 @@ const Col = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (md) {
     const maxWidthMd = (md / 12) * 100;

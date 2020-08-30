@@ -16,7 +16,7 @@ const Avatar = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (color) {
     styles.backgroundColor = color;
@@ -25,12 +25,13 @@ const Avatar = ({
 
   const classNames = ['avatar', `avatar-${size}`, `avatar-${type}`, className];
 
-  if (!src)
+  if (!src) {
     return (
       <div className={classNames.join(' ')} style={styles} {...props}>
         {initials}
       </div>
     );
+  }
 
   return (
     <img

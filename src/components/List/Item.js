@@ -8,7 +8,7 @@ const Item = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['list-item', className];
 

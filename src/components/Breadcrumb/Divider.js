@@ -7,7 +7,7 @@ const Divider = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['breadcrumb-divider', className];
 

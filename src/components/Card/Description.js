@@ -8,7 +8,7 @@ const Description = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['card-description', className];
 

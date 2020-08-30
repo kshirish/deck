@@ -9,7 +9,7 @@ const Cell = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   styles.textAlign = textAlign;
 

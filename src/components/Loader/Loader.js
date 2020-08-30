@@ -11,11 +11,11 @@ const Loader = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['loader', `loader-${size}`, className];
 
-  return <div className={classNames.join(' ')} style={styles} {...props}></div>;
+  return <div className={classNames.join(' ')} style={styles} {...props} />;
 };
 
 Loader.propTypes = {

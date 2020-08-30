@@ -17,7 +17,8 @@ import Button from 'deck/dist/components/button';
 ### Develop components with Storybook
 
 ```shell
-npm run storybook
+$ npm i
+$ npm run storybook
 ```
 
 Open http://localhost:6006/ in your favorite web browser.

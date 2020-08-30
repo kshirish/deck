@@ -15,7 +15,7 @@ const Toaster = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['toaster', className];
   const [tb, lr] = position.split('-');
@@ -43,7 +43,8 @@ const Toaster = ({
     <div className={classNames.join(' ')} style={styles} {...props}>
       {messages.map((message) => (
         <div key={message.id} className={`toast toast-${message.type}`}>
-          {message.text}{' '}
+          {message.text}
+          {' '}
           <span onClick={() => onClose(message.id)} className="close">
             &#10005;
           </span>

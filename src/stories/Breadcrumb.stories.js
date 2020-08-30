@@ -15,7 +15,9 @@ export const Basic = () => (
     <Breadcrumb.Section link>Store</Breadcrumb.Section>
     <Breadcrumb.Divider />
     <Breadcrumb.Section active>
-      Search for: <a href="#">paper towels</a>
+      Search for:
+      {' '}
+      <a href="#">paper towels</a>
     </Breadcrumb.Section>
   </Breadcrumb>
 );

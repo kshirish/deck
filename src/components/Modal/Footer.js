@@ -8,7 +8,7 @@ const Footer = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['modal-footer', className];
 

@@ -11,7 +11,7 @@ const Placeholder = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (circle) {
     styles.borderRadius = '100%';
@@ -19,7 +19,7 @@ const Placeholder = ({
 
   const classNames = ['placeholder', className];
 
-  return <div className={classNames.join(' ')} style={styles} {...props}></div>;
+  return <div className={classNames.join(' ')} style={styles} {...props} />;
 };
 
 Placeholder.propTypes = {

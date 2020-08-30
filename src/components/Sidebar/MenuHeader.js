@@ -8,7 +8,7 @@ const MenuHeader = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['menu-header', className];
 

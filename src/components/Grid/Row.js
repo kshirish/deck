@@ -19,7 +19,7 @@ const Row = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (mdStart) styles.justifyContent = 'flex-start';
 

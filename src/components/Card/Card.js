@@ -12,7 +12,7 @@ const Card = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['card', horizontal ? 'horizontal' : '', className];
 

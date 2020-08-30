@@ -8,7 +8,7 @@ const Stacked = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   const classNames = ['card-stacked', className];
 

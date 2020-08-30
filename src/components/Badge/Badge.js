@@ -14,7 +14,7 @@ const Badge = ({
 
   ...props
 }) => {
-  let styles = { ...style };
+  const styles = { ...style };
 
   if (color) {
     styles.backgroundColor = color;
