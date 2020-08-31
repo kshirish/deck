@@ -1,9 +1,8 @@
 const path = require('path');
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 // plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-// const sourceFolders = [path.resolve(__dirname, './src')];
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -15,6 +14,23 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(stories|story)\.mdx$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ['@babel/plugin-transform-react-jsx'],
+            },
+          },
+          {
+            loader: '@mdx-js/loader',
+            options: {
+              compilers: [createCompiler({})],
+            },
+          },
+        ],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
