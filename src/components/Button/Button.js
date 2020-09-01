@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -10,8 +11,6 @@ const Button = ({
 
   ...props
 }) => {
-  const classNames = [icon ? `button-icon-${iconPosition}` : '', className];
-
   const renderContent = () => {
     if (!icon) return children;
 
@@ -35,7 +34,15 @@ const Button = ({
   };
 
   return (
-    <button className={classNames.join(' ')} {...props}>
+    <button
+      className={cx(
+        {
+          [`button-icon-${iconPosition}`]: icon,
+        },
+        className,
+      )}
+      {...props}
+    >
       {renderContent()}
     </button>
   );

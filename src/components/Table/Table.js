@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -12,22 +13,23 @@ const Table = ({
   children,
 
   ...props
-}) => {
-  const classNames = [
-    bordered ? 'bordered' : '',
-    highlighted ? 'highlighted' : '',
-    striped ? 'striped' : '',
-    compact ? 'compact' : '',
-    sortable ? 'sortable' : '',
-    className,
-  ];
-
-  return (
-    <table className={classNames.join(' ')} {...props}>
-      {children}
-    </table>
-  );
-};
+}) => (
+  <table
+    className={cx(
+      {
+        bordered,
+        highlighted,
+        striped,
+        compact,
+        sortable,
+      },
+      className,
+    )}
+    {...props}
+  >
+    {children}
+  </table>
+);
 
 const StyledTable = styled(Table)`
   width: 100%;

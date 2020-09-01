@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -8,15 +9,11 @@ const List = ({
   children,
 
   ...props
-}) => {
-  const classNames = [divided ? 'divided' : '', className];
-
-  return (
-    <div className={classNames.join(' ')} {...props}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={cx({ divided }, className)} {...props}>
+    {children}
+  </div>
+);
 
 const StyledList = styled(List)`
   font-family: 'Manrope';

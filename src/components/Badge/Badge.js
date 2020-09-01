@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -10,8 +11,6 @@ const Badge = ({
 
   ...props
 }) => {
-  const classNames = [icon ? `badge-icon-${iconPosition}` : '', className];
-
   const renderContent = () => {
     if (!icon) return children;
 
@@ -35,7 +34,15 @@ const Badge = ({
   };
 
   return (
-    <div className={classNames.join(' ')} {...props}>
+    <div
+      className={cx(
+        {
+          [`badge-icon-${iconPosition}`]: icon,
+        },
+        className,
+      )}
+      {...props}
+    >
       {renderContent()}
     </div>
   );

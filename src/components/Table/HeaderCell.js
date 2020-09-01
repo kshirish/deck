@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -11,18 +12,17 @@ const HeaderCell = ({
   children,
 
   ...props
-}) => {
-  const classNames = [
-    sorted === null ? '' : sorted ? 'ascending' : 'descending',
-    className,
-  ];
-
-  return (
-    <th className={classNames.join(' ')} {...props}>
-      {children}
-    </th>
-  );
-};
+}) => (
+  <th
+    className={cx(
+      { ascending: sorted, descending: sorted === false },
+      className,
+    )}
+    {...props}
+  >
+    {children}
+  </th>
+);
 
 const StyledHeaderCell = styled(HeaderCell)`
   padding: 15px;

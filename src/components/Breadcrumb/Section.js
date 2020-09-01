@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -9,15 +10,11 @@ const Section = ({
   link,
 
   ...props
-}) => {
-  const classNames = [active ? 'active' : '', link ? 'link' : '', className];
-
-  return (
-    <div className={classNames.join(' ')} {...props}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={cx({ active, link }, className)} {...props}>
+    {children}
+  </div>
+);
 
 const StyledSection = styled(Section)`
   display: inline-block;
