@@ -1,30 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+// Components
+import Card from './Card';
 
 const Image = ({
-  className,
-  style = {},
   src,
   alt,
 
   ...props
-}) => {
-  const styles = { ...style };
+}) => (
+  <div {...props}>
+    <img src={src} alt={alt} />
+  </div>
+);
 
-  const classNames = ['card-image', className];
+const StyledImage = styled(Image)`
+  img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      <img src={src} alt={alt} />
-    </div>
-  );
-};
+  ${Card}.horizontal & {
+    flex: 1;
 
-Image.propTypes = {
+    img {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 0;
+      height: 100%;
+    }
+  }
+`;
+
+StyledImage.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   src: PropTypes.string,
   alt: PropTypes.string,
 };
 
-export default Image;
+StyledImage.defaultProps = {};
+
+export default StyledImage;

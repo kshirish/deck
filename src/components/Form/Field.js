@@ -1,27 +1,45 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Field = ({
-  className,
-  style = {},
-  children,
+const StyledField = styled.div`
+  margin-bottom: 15px;
+  font-family: 'Manrope';
+  font-size: 14px;
 
-  ...props
-}) => {
-  const styles = { ...style };
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+  }
 
-  const classNames = ['form-field', className];
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  textarea,
+  select {
+    outline: 0;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    box-sizing: border-box;
+  }
 
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
+  select,
+  textarea {
+    font-family: 'Manrope';
+  }
+`;
 
-Field.propTypes = {
+StyledField.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Field;
+StyledField.defaultProps = {};
+
+export default StyledField;

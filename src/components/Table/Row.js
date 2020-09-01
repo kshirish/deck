@@ -1,27 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Row = ({
-  className,
-  style = {},
-  children,
+// Components
+import Table from './Table';
+import Body from './Body';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledRow = styled.tr`
+  ${Table}.highlighted &:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
 
-  const classNames = ['table-row', className];
+  ${Table}.striped ${Body} &:nth-child(2n + 1) {
+    background-color: #f5f5f5;
+  }
+`;
 
-  return (
-    <tr className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </tr>
-  );
-};
-
-Row.propTypes = {
+StyledRow.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Row;
+StyledRow.defaultProps = {};
+
+export default StyledRow;

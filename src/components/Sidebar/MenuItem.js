@@ -1,29 +1,35 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const MenuItem = ({
-  className,
-  style = {},
-  active,
-  children,
-
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['menu-item', active ? 'active' : '', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
+const getCss = (props) => {
+  switch (true) {
+    case props.active:
+      return `
+        font-weight: 600;
+        background-color: #f2f2f2;
+      `;
+  }
 };
 
-MenuItem.propTypes = {
+const StyledMenuItem = styled.div`
+  padding-left: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  ${(props) => getCss(props)}
+
+  &:active,
+  &:hover,
+  &:focus {
+    font-weight: 600;
+    background-color: #f2f2f2;
+  }
+`;
+
+StyledMenuItem.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   active: PropTypes.bool,
 };
 
-export default MenuItem;
+StyledMenuItem.defaultProps = {};
+
+export default StyledMenuItem;

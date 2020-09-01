@@ -1,31 +1,33 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Cell = ({
-  className,
-  style = {},
-  textAlign = 'left',
-  children,
+// Components
+import Table from './Table';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledCell = styled.td`
+  padding: 15px;
+  text-align: ${(props) => props.textAlign};
 
-  styles.textAlign = textAlign;
+  ${Table}.bordered & {
+    border: 1px solid #e4e4e4;
+  }
 
-  const classNames = ['table-cell', className];
+  ${Table}.compact & {
+    padding: 10px;
+  }
 
-  return (
-    <td className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </td>
-  );
-};
+  ${Table}.centered & {
+    text-align: center;
+  }
+`;
 
-Cell.propTypes = {
+StyledCell.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   textAlign: PropTypes.string,
 };
 
-export default Cell;
+StyledCell.defaultProps = {
+  textAlign: 'left',
+};
+
+export default StyledCell;

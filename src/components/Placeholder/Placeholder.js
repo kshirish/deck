@@ -1,31 +1,32 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Placeholder.css';
+const StyledPlaceholder = styled.div`
+  display: inline-block;
+  animation: fading 3s linear infinite;
+  background: #9e9e9e;
+  border-radius: ${(props) => props.circle && '100%'};
 
-const Placeholder = ({
-  className,
-  style = {},
-  circle,
+  @keyframes fading {
+    0% {
+      opacity: 0.1;
+    }
 
-  ...props
-}) => {
-  const styles = { ...style };
+    50% {
+      opacity: 0.5;
+    }
 
-  if (circle) {
-    styles.borderRadius = '100%';
+    100% {
+      opacity: 0.1;
+    }
   }
+`;
 
-  const classNames = ['placeholder', className];
-
-  return <div className={classNames.join(' ')} style={styles} {...props} />;
-};
-
-Placeholder.propTypes = {
+StyledPlaceholder.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   circle: PropTypes.bool,
 };
 
-export default Placeholder;
+StyledPlaceholder.defaultProps = {};
+
+export default StyledPlaceholder;

@@ -1,32 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './Card.css';
+import styled from 'styled-components';
 
 const Card = ({
   className,
-  style = {},
   horizontal,
   children,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  const classNames = ['card', horizontal ? 'horizontal' : '', className];
+  const classNames = [horizontal ? 'horizontal' : '', className];
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
+    <div className={classNames.join(' ')} {...props}>
       {children}
     </div>
   );
 };
 
-Card.propTypes = {
+const StyledCard = styled(Card)`
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-family: 'Manrope';
+
+  &.horizontal {
+    display: flex;
+  }
+`;
+
+StyledCard.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   horizontal: PropTypes.bool,
 };
 
-export default Card;
+StyledCard.defaultProps = {};
+
+export default StyledCard;

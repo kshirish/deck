@@ -1,27 +1,21 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Stacked = ({
-  className,
-  style = {},
-  children,
+// Components
+import Card from './Card';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledStacked = styled.div`
+  ${Card}.horizontal & {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
-  const classNames = ['card-stacked', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Stacked.propTypes = {
+StyledStacked.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Stacked;
+StyledStacked.defaultProps = {};
+
+export default StyledStacked;

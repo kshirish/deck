@@ -1,27 +1,21 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Content = ({
-  className,
-  style = {},
-  children,
+// Components
+import Card from './Card';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledContent = styled.div`
+  padding: 15px;
 
-  const classNames = ['card-content', className];
+  ${Card}.horizontal & {
+    flex: 3;
+  }
+`;
 
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Content.propTypes = {
+StyledContent.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Content;
+StyledContent.defaultProps = {};
+
+export default StyledContent;

@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './Table.css';
+import styled from 'styled-components';
 
 const Table = ({
   className,
-  style = {},
   bordered,
   highlighted,
   striped,
@@ -16,10 +13,7 @@ const Table = ({
 
   ...props
 }) => {
-  const styles = { ...style };
-
   const classNames = [
-    'table',
     bordered ? 'bordered' : '',
     highlighted ? 'highlighted' : '',
     striped ? 'striped' : '',
@@ -29,15 +23,25 @@ const Table = ({
   ];
 
   return (
-    <table className={classNames.join(' ')} style={styles} {...props}>
+    <table className={classNames.join(' ')} {...props}>
       {children}
     </table>
   );
 };
 
-Table.propTypes = {
+const StyledTable = styled(Table)`
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Manrope';
+  font-size: 14px;
+
+  &.bordered {
+    border: 1px solid #e4e4e4;
+  }
+`;
+
+StyledTable.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   bordered: PropTypes.bool,
   highlighted: PropTypes.bool,
   striped: PropTypes.bool,
@@ -45,4 +49,6 @@ Table.propTypes = {
   sortable: PropTypes.bool,
 };
 
-export default Table;
+StyledTable.defaultProps = {};
+
+export default StyledTable;

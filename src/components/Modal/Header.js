@@ -1,27 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Header = ({
-  className,
-  style = {},
-  children,
+const StyledHeader = styled.div`
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #e4e4e4;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['modal-header', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Header.propTypes = {
+StyledHeader.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Header;
+StyledHeader.defaultProps = {};
+
+export default StyledHeader;

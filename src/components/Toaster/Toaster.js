@@ -1,32 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './Toaster.css';
+import styled from 'styled-components';
 
 const Toaster = ({
-  className,
-  style = {},
   autoClose,
-  position = 'bottom-right',
   type,
   messages,
   onClose,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  const classNames = ['toaster', className];
-  const [tb, lr] = position.split('-');
-
-  styles[tb] = 60;
-
-  if (lr === 'center') {
-    styles.left = '50%';
-    styles.transform = 'translateX(-50%)';
-  } else styles[lr] = 60;
-
   useEffect(() => {
     if (!autoClose || !messages.length) return;
 
@@ -40,11 +23,10 @@ const Toaster = ({
   }, [messages, autoClose, onClose]);
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {messages.map(message => (
+    <div {...props}>
+      {messages.map((message) => (
         <div key={message.id} className={`toast toast-${message.type}`}>
-          {message.text}
-          {' '}
+          {message.text}{' '}
           <span onClick={() => onClose(message.id)} className="close">
             &#10005;
           </span>
@@ -54,9 +36,68 @@ const Toaster = ({
   );
 };
 
-Toaster.propTypes = {
+const getCss = (props) => {
+  const [tb, lr] = props.position.split('-');
+
+  switch (true) {
+    case lr === 'center':
+      return `
+        ${tb}: 60px;
+        left : 50%;
+        transform : translateX(-50%);
+      `;
+
+    default:
+      return `
+        ${tb}: 60px;
+        ${lr}: 60px;
+      `;
+  }
+};
+
+const StyledToaster = styled(Toaster)`
+  position: fixed;
+  font-family: 'Manrope';
+  font-size: 14px;
+  ${(props) => getCss(props)}
+
+  .toast {
+    background: #424242;
+    color: #ffffff;
+    z-index: 3;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    &.toast-success {
+      color: #23621e;
+      background-color: #e8f5e9;
+    }
+
+    &.toast-info {
+      color: #0f62a4;
+      background-color: #e3f2fd;
+    }
+
+    &.toast-warning {
+      color: #70600c;
+      background-color: #fffddb;
+    }
+
+    &.toast-error {
+      color: #9f231a;
+      background-color: #ffebee;
+    }
+
+    .close {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+`;
+
+StyledToaster.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   autoClose: PropTypes.number,
   position: PropTypes.oneOf([
     'top-left',
@@ -71,4 +112,8 @@ Toaster.propTypes = {
   onClose: PropTypes.func,
 };
 
-export default Toaster;
+StyledToaster.defaultProps = {
+  position: 'bottom-right',
+};
+
+export default StyledToaster;

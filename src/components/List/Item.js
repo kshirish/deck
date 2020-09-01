@@ -1,27 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Item = ({
-  className,
-  style = {},
-  children,
+// Components
+import List from './List';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledItem = styled.div`
+  padding: 10px;
 
-  const classNames = ['list-item', className];
+  ${List}.divided & {
+    border-bottom: 1px solid #e4e4e4;
+    &:last-child {
+      border: none;
+    }
+  }
+`;
 
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Item.propTypes = {
+StyledItem.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Item;
+StyledItem.defaultProps = {};
+
+export default StyledItem;

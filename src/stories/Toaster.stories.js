@@ -17,7 +17,7 @@ export const Basic = () => {
 
   const onToastClose = (messageId) => {
     const updatedMessages = messages.filter(
-      message => message.id !== messageId,
+      (message) => message.id !== messageId,
     );
     setMessages(updatedMessages);
   };

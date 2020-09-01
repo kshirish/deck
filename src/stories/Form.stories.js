@@ -18,7 +18,7 @@ export const Basic = () => (
         type="text"
         name="firstName"
         placeholder="First name"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
     </Form.Field>
     <Form.Field>
@@ -28,7 +28,7 @@ export const Basic = () => (
         type="text"
         name="lastName"
         placeholder="Last name"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
     </Form.Field>
     <Form.Field>
@@ -37,7 +37,7 @@ export const Basic = () => (
         id="emailId"
         type="email"
         name="emailId"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
     </Form.Field>
     <Form.Field>
@@ -46,7 +46,7 @@ export const Basic = () => (
         id="password"
         type="password"
         name="password"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
     </Form.Field>
     <Form.Field>
@@ -55,7 +55,7 @@ export const Basic = () => (
         type="checkbox"
         name="languages"
         value="js"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       Javascript
@@ -63,7 +63,7 @@ export const Basic = () => (
         type="checkbox"
         name="languages"
         value="html"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       HTML
@@ -71,7 +71,7 @@ export const Basic = () => (
         type="checkbox"
         name="languages"
         value="css"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       CSS
@@ -82,7 +82,7 @@ export const Basic = () => (
         type="radio"
         name="gender"
         value="m"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       Male
@@ -90,7 +90,7 @@ export const Basic = () => (
         type="radio"
         name="gender"
         value="f"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       Female
@@ -98,7 +98,7 @@ export const Basic = () => (
         type="radio"
         name="gender"
         value="o"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
       {' '}
       Others
@@ -108,7 +108,7 @@ export const Basic = () => (
       <select
         name="favCar"
         id="favCar"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       >
         <option value="maruti800">Maruti 800</option>
         <option value="alto">Alto</option>
@@ -123,7 +123,7 @@ export const Basic = () => (
         multiple
         name="cars"
         id="cars"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       >
         <option value="maruti800">Maruti 800</option>
         <option value="alto">Alto</option>
@@ -138,7 +138,7 @@ export const Basic = () => (
         name="bio"
         id="bio"
         rows="3"
-        onChange={e => console.log(e.target.name, e.target.value)}
+        onChange={(e) => console.log(e.target.name, e.target.value)}
       />
     </Form.Field>
     <Button>Submit</Button>

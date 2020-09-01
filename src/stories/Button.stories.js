@@ -7,7 +7,6 @@ export default {
   component: Button,
   argTypes: {
     color: { control: 'color' },
-    outline: { control: 'color' },
   },
 };
 
@@ -17,8 +16,13 @@ export const Secondary = () => <Button type="secondary">Hello World</Button>;
 
 export const Disabled = () => (
   <>
-    <Button>Hello World</Button>
-    <Button type="secondary">Hello World</Button>
+    <Button disabled>Hello World</Button>
+    <Button type="secondary" disabled>
+      Hello World
+    </Button>
+    <Button type="outline" disabled>
+      Hello World
+    </Button>
   </>
 );
 
@@ -78,18 +82,42 @@ export const Colored = () => (
 
 export const Outlined = () => (
   <>
-    <Button outline="red">Hello World</Button>
-    <Button outline="orange">Hello World</Button>
-    <Button outline="yellow">Hello World</Button>
-    <Button outline="olive">Hello World</Button>
-    <Button outline="green">Hello World</Button>
-    <Button outline="teal">Hello World</Button>
-    <Button outline="blue">Hello World</Button>
-    <Button outline="violet">Hello World</Button>
-    <Button outline="pink">Hello World</Button>
-    <Button outline="brown">Hello World</Button>
-    <Button outline="grey">Hello World</Button>
-    <Button outline="black">Hello World</Button>
+    <Button type="outline" color="red">
+      Hello World
+    </Button>
+    <Button type="outline" color="orange">
+      Hello World
+    </Button>
+    <Button type="outline" color="yellow">
+      Hello World
+    </Button>
+    <Button type="outline" color="olive">
+      Hello World
+    </Button>
+    <Button type="outline" color="green">
+      Hello World
+    </Button>
+    <Button type="outline" color="teal">
+      Hello World
+    </Button>
+    <Button type="outline" color="blue">
+      Hello World
+    </Button>
+    <Button type="outline" color="violet">
+      Hello World
+    </Button>
+    <Button type="outline" color="pink">
+      Hello World
+    </Button>
+    <Button type="outline" color="brown">
+      Hello World
+    </Button>
+    <Button type="outline" color="grey">
+      Hello World
+    </Button>
+    <Button type="outline" color="black">
+      Hello World
+    </Button>
   </>
 );
 

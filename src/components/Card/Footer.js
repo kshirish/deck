@@ -1,27 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Footer = ({
-  className,
-  style = {},
-  children,
+// Components
+import Card from './Card';
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledFooter = styled.div`
+  text-align: right;
+  padding: 15px;
+  background-color: #fafafa;
 
-  const classNames = ['card-footer', className];
+  ${Card}.horizontal & {
+    flex: 1;
+  }
+`;
 
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Footer.propTypes = {
+StyledFooter.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Footer;
+StyledFooter.defaultProps = {};
+
+export default StyledFooter;

@@ -1,32 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './List.css';
+import styled from 'styled-components';
 
 const List = ({
   className,
-  style = {},
   divided,
   children,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  const classNames = ['list', divided ? 'divided' : '', className];
+  const classNames = [divided ? 'divided' : '', className];
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
+    <div className={classNames.join(' ')} {...props}>
       {children}
     </div>
   );
 };
 
-List.propTypes = {
+const StyledList = styled(List)`
+  font-family: 'Manrope';
+  font-size: 14px;
+`;
+
+StyledList.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   divided: PropTypes.bool,
 };
 
-export default List;
+StyledList.defaultProps = {};
+
+export default StyledList;

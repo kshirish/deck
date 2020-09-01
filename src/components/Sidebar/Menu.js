@@ -1,27 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Menu = ({
-  className,
-  style = {},
-  children,
+const StyledMenu = styled.div`
+  margin-bottom: 30px;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['menu', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Menu.propTypes = {
+StyledMenu.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Menu;
+StyledMenu.defaultProps = {};
+
+export default StyledMenu;

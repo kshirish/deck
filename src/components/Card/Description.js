@@ -1,27 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Description = ({
-  className,
-  style = {},
-  children,
+const StyledDescription = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-size: 14px;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['card-description', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Description.propTypes = {
+StyledDescription.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Description;
+StyledDescription.defaultProps = {};
+
+export default StyledDescription;

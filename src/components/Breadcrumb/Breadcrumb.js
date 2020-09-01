@@ -1,30 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Breadcrumb.css';
+const StyledBreadcrumb = styled.div`
+  list-style: none;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Manrope';
+  font-size: 14px;
+`;
 
-const Breadcrumb = ({
-  className,
-  style = {},
-  children,
-
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['breadcrumb', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Breadcrumb.propTypes = {
+StyledBreadcrumb.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Breadcrumb;
+StyledBreadcrumb.defaultProps = {};
+
+export default StyledBreadcrumb;

@@ -1,27 +1,49 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Loader.css';
-
-const Loader = ({
-  className,
-  style = {},
-  size = 'medium',
-
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['loader', `loader-${size}`, className];
-
-  return <div className={classNames.join(' ')} style={styles} {...props} />;
+const getCss = (props) => {
+  switch (props.size) {
+    case 'small':
+      return `
+      width: 30px;
+      height: 30px;
+    `;
+    case 'medium':
+      return `
+        width: 60px;
+        height: 60px;
+      `;
+    case 'large':
+      return `
+      width: 90px;
+      height: 90px;
+    `;
+  }
 };
 
-Loader.propTypes = {
+const StyledLoader = styled.div`
+  display: inline-block;
+  border: 5px solid #e4e4e4;
+  border-top: 5px solid #f65858;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  ${(props) => getCss(props)}
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+StyledLoader.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-export default Loader;
+StyledLoader.defaultProps = { size: 'medium' };
+
+export default StyledLoader;

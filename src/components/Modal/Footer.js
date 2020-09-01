@@ -1,27 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Footer = ({
-  className,
-  style = {},
-  children,
+const StyledFooter = styled.div`
+  padding: 15px;
+  text-align: right;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['modal-footer', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Footer.propTypes = {
+StyledFooter.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Footer;
+StyledFooter.defaultProps = {};
+
+export default StyledFooter;

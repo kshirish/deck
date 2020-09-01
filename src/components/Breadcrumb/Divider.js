@@ -1,26 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Divider = ({
-  className,
-  style = {},
+const Divider = (props) => <div {...props}>/</div>;
 
-  ...props
-}) => {
-  const styles = { ...style };
+const StyledDivider = styled(Divider)`
+  padding: 0 5px;
+  display: inline-block;
+`;
 
-  const classNames = ['breadcrumb-divider', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      /
-    </div>
-  );
-};
-
-Divider.propTypes = {
+StyledDivider.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Divider;
+StyledDivider.defaultProps = {};
+
+export default StyledDivider;

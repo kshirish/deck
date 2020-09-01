@@ -1,31 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './Badge.css';
+import styled from 'styled-components';
 
 const Badge = ({
   className,
-  style = {},
   icon,
   iconPosition,
-  color,
   children,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  if (color) {
-    styles.backgroundColor = color;
-    styles.color = '#ffffff';
-  }
-
-  const classNames = [
-    'badge',
-    icon ? `badge-icon-${iconPosition}` : '',
-    className,
-  ];
+  const classNames = [icon ? `badge-icon-${iconPosition}` : '', className];
 
   const renderContent = () => {
     if (!icon) return children;
@@ -46,24 +31,62 @@ const Badge = ({
             {children}
           </>
         );
-
-      default:
     }
   };
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
+    <div className={classNames.join(' ')} {...props}>
       {renderContent()}
     </div>
   );
 };
 
-Badge.propTypes = {
+const getCss = (props) => {
+  switch (true) {
+    case !!props.color:
+      return `
+        background-color: ${props.color};
+        color: #ffffff;    
+      `;
+    default:
+      return `
+        background-color: #e8e8e8;
+        color: #666666;    
+      `;
+  }
+};
+
+const StyledBadge = styled(Badge)`
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Manrope';
+  border-radius: 5px;
+  margin: 0 2px;
+  text-transform: capitalize;
+  ${(props) => getCss(props)}
+
+  &.badge-icon-left img {
+    width: 15px;
+    vertical-align: sub;
+    margin-right: 5px;
+  }
+
+  &.badge-icon-right img {
+    width: 15px;
+    vertical-align: sub;
+    margin-left: 5px;
+  }
+`;
+
+StyledBadge.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   color: PropTypes.string,
   icon: PropTypes.element,
   iconPosition: PropTypes.oneOf(['left', 'right']),
 };
 
-export default Badge;
+StyledBadge.defaultProps = {};
+
+export default StyledBadge;

@@ -1,15 +1,11 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 // Hooks
 import useClickOutside from '../../hooks/useClickOutside';
 
-// Styles
-import './Modal.css';
-
 const Modal = ({
-  className,
-  style = {},
   onOpen,
   onClose,
   open,
@@ -18,10 +14,7 @@ const Modal = ({
 
   ...props
 }) => {
-  const styles = { ...style };
-
   const dialogRef = useRef(null);
-  const classNames = ['modal', className];
 
   useClickOutside(dialogRef, onClose);
 
@@ -29,7 +22,7 @@ const Modal = ({
     <>
       {React.cloneElement(trigger, { onClick: onOpen })}
       {open ? (
-        <div className={classNames.join(' ')} style={styles} {...props}>
+        <div {...props}>
           <div ref={dialogRef} className="modal-dialog">
             {children}
           </div>
@@ -39,13 +32,35 @@ const Modal = ({
   );
 };
 
-Modal.propTypes = {
+const StyledModal = styled(Modal)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: 'Manrope';
+  color: #212121;
+
+  .modal-dialog {
+    border-radius: 5px;
+    position: fixed;
+    background: white;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+StyledModal.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   open: PropTypes.bool,
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
 };
 
-export default Modal;
+StyledModal.defaultProps = {};
+
+export default StyledModal;

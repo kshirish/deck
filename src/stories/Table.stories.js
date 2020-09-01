@@ -314,7 +314,6 @@ function exampleReducer(state, action) {
         data: _sortBy(state.data, [action.column]),
         direction: true,
       };
-    default:
   }
 }
 

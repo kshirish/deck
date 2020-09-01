@@ -1,30 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Sidebar.css';
+const StyledSidebar = styled.div`
+  padding: 15px;
+  line-height: 2;
+  font-family: Manrope;
 
-const Sidebar = ({
-  className,
-  style = {},
-  children,
+  ul {
+    padding-left: 15px;
+  }
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['sidebar', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Sidebar.propTypes = {
+StyledSidebar.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Sidebar;
+StyledSidebar.defaultProps = {};
+
+export default StyledSidebar;

@@ -1,27 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Content = ({
-  className,
-  style = {},
-  children,
+const StyledContent = styled.div`
+  padding: 15px;
+  font-size: 14px;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['modal-content', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-Content.propTypes = {
+StyledContent.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Content;
+StyledContent.defaultProps = {};
+
+export default StyledContent;

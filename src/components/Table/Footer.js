@@ -1,27 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Footer = ({
-  className,
-  style = {},
-  children,
+const StyledFooter = styled.tfoot``;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['table-footer', className];
-
-  return (
-    <tfoot className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </tfoot>
-  );
-};
-
-Footer.propTypes = {
+StyledFooter.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Footer;
+StyledFooter.defaultProps = {};
+
+export default StyledFooter;

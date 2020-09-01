@@ -1,54 +1,44 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Grid.css';
+const getCss = (props) => {
+  switch (true) {
+    case props.mdTop:
+      return 'align-items: flex-start';
+    case props.mdMiddle:
+      return 'align-items: center';
+    case props.mdBottom:
+      return 'align-items: flex-end';
 
-const Row = ({
-  className,
-  style = {},
-  mdStart,
-  mdCenter,
-  mdEnd,
-  mdTop,
-  mdMiddle,
-  mdBottom,
-  mdAround,
-  mdBetween,
-  children,
-
-  ...props
-}) => {
-  const styles = { ...style };
-
-  if (mdStart) styles.justifyContent = 'flex-start';
-
-  if (mdCenter) styles.justifyContent = 'center';
-
-  if (mdEnd) styles.justifyContent = 'flex-end';
-
-  if (mdTop) styles.alignItems = 'flex-start';
-
-  if (mdMiddle) styles.alignItems = 'center';
-
-  if (mdBottom) styles.alignItems = 'flex-end';
-
-  if (mdAround) styles.justifyContent = 'space-around';
-
-  if (mdBetween) styles.justifyContent = 'space-between';
-
-  const classNames = ['row', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
+    case props.mdStart:
+      return 'justify-content: flex-start';
+    case props.mdCenter:
+      return 'justify-content: center';
+    case props.mdEnd:
+      return 'justify-content: flex-end';
+    case props.mdAround:
+      return 'justify-content: space-around';
+    case props.mdBetween:
+      return 'justify-content: space-between';
+  }
 };
 
-Row.propTypes = {
+const StyledRow = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  ${(props) => getCss(props)}
+`;
+
+StyledRow.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
 };
 
-export default Row;
+StyledRow.defaultProps = {};
+
+export default StyledRow;

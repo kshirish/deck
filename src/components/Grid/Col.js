@@ -1,45 +1,33 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// Styles
-import './Grid.css';
+const getCss = (props) => {
+  switch (true) {
+    case !!props.md:
+      const maxWidthMd = (props.md / 12) * 100;
 
-const Col = ({
-  className,
-  style = {},
-  md,
-  mdOffset,
-  children,
-
-  ...props
-}) => {
-  const styles = { ...style };
-
-  if (md) {
-    const maxWidthMd = (md / 12) * 100;
-
-    styles.flexBasis = `${maxWidthMd}%`;
-    styles.maxWidth = `${maxWidthMd}%`;
-
-    if (mdOffset) {
-      styles.marginLeft = `${100 - maxWidthMd}%`;
-    }
+      return `
+        flex-basis: ${maxWidthMd}%;
+        max-width: ${maxWidthMd}%;
+        margin-left: ${props.mdOffset ? 100 - maxWidthMd : ''}%;
+      `;
   }
-
-  const classNames = ['col', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
 };
 
-Col.propTypes = {
+const StyledCol = styled.div`
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  ${(props) => getCss(props)}
+`;
+
+StyledCol.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   md: PropTypes.number,
   mdOffset: PropTypes.number,
 };
 
-export default Col;
+StyledCol.defaultProps = {};
+
+export default StyledCol;

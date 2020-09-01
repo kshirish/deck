@@ -1,27 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const MenuHeader = ({
-  className,
-  style = {},
-  children,
+const StyledMenuHeader = styled.div`
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  font-size: 12px;
+`;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['menu-header', className];
-
-  return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </div>
-  );
-};
-
-MenuHeader.propTypes = {
+StyledMenuHeader.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default MenuHeader;
+StyledMenuHeader.defaultProps = {};
+
+export default StyledMenuHeader;

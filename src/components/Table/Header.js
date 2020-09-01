@@ -1,27 +1,12 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Header = ({
-  className,
-  style = {},
-  children,
+const StyledHeader = styled.thead``;
 
-  ...props
-}) => {
-  const styles = { ...style };
-
-  const classNames = ['table-header', className];
-
-  return (
-    <thead className={classNames.join(' ')} style={styles} {...props}>
-      {children}
-    </thead>
-  );
-};
-
-Header.propTypes = {
+StyledHeader.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
 };
 
-export default Header;
+StyledHeader.defaultProps = {};
+
+export default StyledHeader;

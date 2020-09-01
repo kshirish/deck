@@ -1,36 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Section = ({
   className,
-  style = {},
   children,
   active,
   link,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  const classNames = [
-    'breadcrumb-item',
-    active ? 'active' : '',
-    link ? 'link' : '',
-    className,
-  ];
+  const classNames = [active ? 'active' : '', link ? 'link' : '', className];
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
+    <div className={classNames.join(' ')} {...props}>
       {children}
     </div>
   );
 };
 
-Section.propTypes = {
+const StyledSection = styled(Section)`
+  display: inline-block;
+
+  &.link {
+    color: #297cbb;
+  }
+
+  &.active {
+    color: #616161;
+  }
+`;
+
+StyledSection.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   active: PropTypes.bool,
   link: PropTypes.bool,
 };
 
-export default Section;
+StyledSection.defaultProps = {};
+
+export default StyledSection;

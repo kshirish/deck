@@ -1,31 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Styles
-import './Tab.css';
+import styled from 'styled-components';
 
 const Tab = ({
-  className,
-  style = {},
   panes,
   activeTab,
   onChange,
 
   ...props
 }) => {
-  const styles = { ...style };
-
-  const classNames = ['tab', className];
-  const activePane = panes.find(pane => pane.menuItem === activeTab);
+  const activePane = panes.find((pane) => pane.menuItem === activeTab);
 
   return (
-    <div className={classNames.join(' ')} style={styles} {...props}>
+    <div {...props}>
       <ul>
-        {panes.map(pane => (
+        {panes.map((pane) => (
           <li
             className={pane.menuItem === activeTab ? 'active' : ''}
             key={pane.menuItem}
-            onClick={e => onChange(pane.menuItem)}
+            onClick={(e) => onChange(pane.menuItem)}
           >
             {pane.menuItem}
           </li>
@@ -36,9 +29,41 @@ const Tab = ({
   );
 };
 
-Tab.propTypes = {
+const StyledTab = styled(Tab)`
+  font-family: 'Manrope';
+  font-size: 14px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+  }
+
+  li {
+    margin: 0 15px;
+    padding: 15px;
+    cursor: pointer;
+
+    &.active {
+      border-bottom: 3px solid #0098ab;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:hover {
+      border-bottom: 3px solid #0098ab44;
+    }
+  }
+
+  .tab-pane {
+    padding: 15px;
+  }
+`;
+
+StyledTab.propTypes = {
   className: PropTypes.string,
-  style: PropTypes.object,
   panes: PropTypes.arrayOf(
     PropTypes.shape({
       menuItem: PropTypes.string,
@@ -49,4 +74,6 @@ Tab.propTypes = {
   onChange: PropTypes.func,
 };
 
-export default Tab;
+StyledTab.defaultProps = {};
+
+export default StyledTab;
