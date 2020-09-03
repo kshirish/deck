@@ -1,21 +1,23 @@
+const fontWeightLight = 300;
 const fontWeightRegular = 400;
 const fontWeightMedium = 500;
 const fontWeightBold = 600;
-const fontWeightBolder = 700;
 
 const fontSizeBodyTiny = '10px';
 const fontSizeBodySmall = '12px';
 const fontSizeBody = '14px';
+const fontSizeHeading6 = '14px';
 const fontSizeHeading5 = '16px';
 const fontSizeHeading4 = '20px';
 const fontSizeHeading3 = '24px';
 const fontSizeHeading2 = '32px';
 const fontSizeHeading1 = '40px';
-const fontSizeSuper = '48px';
+const fontSizeSuper = '64px';
 
 const lineHeightBodyTiny = 1.3;
 const lineHeightBodySmall = 1.3;
 const lineHeightBody = 1.3;
+const lineHeightHeading6 = 1.4;
 const lineHeightHeading5 = 1.4;
 const lineHeightHeading4 = 1.5;
 const lineHeightHeading3 = 1.33;
@@ -24,14 +26,15 @@ const lineHeightHeading1 = 1.2;
 const lineHeightSuper = 1.16;
 
 export default {
+  fontWeightLight,
   fontWeightRegular,
   fontWeightMedium,
   fontWeightBold,
-  fontWeightBolder,
 
   fontSizeBodyTiny,
   fontSizeBodySmall,
   fontSizeBody,
+  fontSizeHeading6,
   fontSizeHeading5,
   fontSizeHeading4,
   fontSizeHeading3,
@@ -42,6 +45,7 @@ export default {
   lineHeightBodyTiny,
   lineHeightBodySmall,
   lineHeightBody,
+  lineHeightHeading6,
   lineHeightHeading5,
   lineHeightHeading4,
   lineHeightHeading3,

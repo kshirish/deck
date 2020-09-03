@@ -6,13 +6,20 @@ import { Meta } from '@storybook/addon-docs/blocks';
     h2 {    
         border-bottom: none !important;
     }
+
     table {
-        width: 100%;
+        width: 100%;        
     }
+
     table th, table td {
         padding: 20px 30px !important;
         text-align: left;
     }
+
+    td div {
+      -webkit-font-smoothing: auto !important;
+    }
+
     .box {
         width: 20px;
         height: 20px;
@@ -92,13 +99,10 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>colors.linkPrimaryHover</code>
       </td>
       <td>
-        <code>rgba(41, 124, 187, 0.7)</code>
+        <code>#00a2c7b3</code>
       </td>
       <td>
-        <div
-          className="box"
-          style={{ backgroundColor: 'rgba(41, 124, 187, 0.7)' }}
-        ></div>
+        <div className="box" style={{ backgroundColor: '#00a2c7b3' }}></div>
       </td>
     </tr>
     <tr>
@@ -110,17 +114,6 @@ import { Meta } from '@storybook/addon-docs/blocks';
       </td>
       <td>
         <div className="box" style={{ backgroundColor: '#e4e4e4' }}></div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>colors.borderLight</code>
-      </td>
-      <td>
-        <code>#bfd0d8</code>
-      </td>
-      <td>
-        <div className="box" style={{ backgroundColor: '#bfd0d8' }}></div>
       </td>
     </tr>
     <tr>
@@ -292,6 +285,27 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>fontSizeBodyTiny</code>
       </td>
       <td>
+        <code>10px</code>
+      </td>
+      <td>
+        <div
+          style={{
+            fontSize: '10px',
+            fontFamily: 'Manrope',
+            lineHeight: 1.3,
+          }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
+          mauris sit amet massa interdum bibendum. Ut ac ex leo. Cras blandit
+          enim ut metus feugiat, vitae pharetra massa aliquet.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>fontSizeBodySmall</code>
+      </td>
+      <td>
         <code>12px</code>
       </td>
       <td>
@@ -310,7 +324,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </tr>
     <tr>
       <td>
-        <code>fontSizeBodySmall</code>
+        <code>fontSizeBody</code>
       </td>
       <td>
         <code>14px</code>
@@ -331,7 +345,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </tr>
     <tr>
       <td>
-        <code>fontSizeBody</code>
+        <code>fontSizeHeading5</code>
       </td>
       <td>
         <code>16px</code>
@@ -341,7 +355,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
           style={{
             fontSize: '16px',
             fontFamily: 'Manrope',
-            lineHeight: 1.3,
+            lineHeight: 1.4,
           }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed
@@ -352,15 +366,15 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </tr>
     <tr>
       <td>
-        <code>fontSizeHeading5</code>
+        <code>fontSizeHeading6</code>
       </td>
       <td>
-        <code>20px</code>
+        <code>16px</code>
       </td>
       <td>
         <div
           style={{
-            fontSize: '20px',
+            fontSize: '14px',
             fontFamily: 'Manrope',
             lineHeight: 1.4,
           }}
@@ -376,12 +390,12 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>fontSizeHeading4</code>
       </td>
       <td>
-        <code>24px</code>
+        <code>20px</code>
       </td>
       <td>
         <div
           style={{
-            fontSize: '24px',
+            fontSize: '20px',
             fontFamily: 'Manrope',
             lineHeight: 1.5,
           }}
@@ -396,12 +410,12 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>fontSizeHeading3</code>
       </td>
       <td>
-        <code>32px</code>
+        <code>24px</code>
       </td>
       <td>
         <div
           style={{
-            fontSize: '32px',
+            fontSize: '24px',
             fontFamily: 'Manrope',
             lineHeight: 1.33,
           }}
@@ -416,12 +430,12 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>fontSizeHeading2</code>
       </td>
       <td>
-        <code>40px</code>
+        <code>32px</code>
       </td>
       <td>
         <div
           style={{
-            fontSize: '40px',
+            fontSize: '32px',
             fontFamily: 'Manrope',
             lineHeight: 1.25,
           }}
@@ -436,12 +450,12 @@ import { Meta } from '@storybook/addon-docs/blocks';
         <code>fontSizeHeading1</code>
       </td>
       <td>
-        <code>48px</code>
+        <code>40px</code>
       </td>
       <td>
         <div
           style={{
-            fontSize: '48px',
+            fontSize: '40px',
             fontFamily: 'Manrope',
             lineHeight: 1.2,
           }}
@@ -511,6 +525,14 @@ import { Meta } from '@storybook/addon-docs/blocks';
     </tr>
     <tr>
       <td>
+        <code>lineHeightHeading6</code>
+      </td>
+      <td>
+        <code>1.4</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <code>lineHeightHeading5</code>
       </td>
       <td>
@@ -575,6 +597,20 @@ import { Meta } from '@storybook/addon-docs/blocks';
   <tbody>
     <tr>
       <td>
+        <code>fontWeightLight</code>
+      </td>
+      <td>
+        <code>300</code>
+      </td>
+      <td>
+        <div style={{ fontWeight: 300, fontFamily: 'Manrope' }}>
+          Join the Flickr community, home to tens of billions of photos and 2
+          million groups.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <code>fontWeightRegular</code>
       </td>
       <td>
@@ -610,20 +646,6 @@ import { Meta } from '@storybook/addon-docs/blocks';
       </td>
       <td>
         <div style={{ fontWeight: 600, fontFamily: 'Manrope' }}>
-          Join the Flickr community, home to tens of billions of photos and 2
-          million groups.
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>fontWeightBolder</code>
-      </td>
-      <td>
-        <code>700</code>
-      </td>
-      <td>
-        <div style={{ fontWeight: 700, fontFamily: 'Manrope' }}>
           Join the Flickr community, home to tens of billions of photos and 2
           million groups.
         </div>

@@ -57,7 +57,7 @@ const getSizeCss = (props) => {
         width: 150px;
         height: 150px;
         line-height: 150px;
-        font-size: 48px;
+        font-size: 64px;
       `;
   }
 };

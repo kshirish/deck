@@ -16,7 +16,6 @@ const linkPrimary = secondary;
 const linkPrimaryHover = `${linkPrimary}b3`;
 
 const borderPrimary = lighterGrey;
-const borderLight = '#bfd0d8';
 
 const textPrimary = '#212121';
 const textSecondary = lightGrey;
@@ -52,7 +51,6 @@ export default {
   linkPrimary,
   linkPrimaryHover,
   borderPrimary,
-  borderLight,
   textPrimary,
   textSecondary,
   white,

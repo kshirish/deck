@@ -14,6 +14,7 @@ export { default as Placeholder } from './components/Placeholder';
 export { default as Popover } from './components/Popover';
 export { default as Sidebar } from './components/Sidebar';
 export { default as Tab } from './components/Tab';
+export { default as Text } from './components/Text';
 export { default as Table } from './components/Table';
 export { default as Theme } from './components/Theme';
 export { default as Toaster } from './components/Toaster';
