@@ -34,11 +34,9 @@ const Table = ({
 const StyledTable = styled(Table)`
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Manrope';
-  font-size: 14px;
 
   &.bordered {
-    border: 1px solid #e4e4e4;
+    border: 1px solid ${(props) => props.theme.lighterGrey};
   }
 `;
 

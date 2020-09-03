@@ -8,7 +8,7 @@ const StyledItem = styled.div`
   padding: 10px;
 
   ${List}.divided & {
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: 1px solid ${(props) => props.theme.lighterGrey};
     &:last-child {
       border: none;
     }

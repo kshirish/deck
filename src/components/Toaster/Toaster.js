@@ -57,36 +57,35 @@ const getCss = (props) => {
 
 const StyledToaster = styled(Toaster)`
   position: fixed;
-  font-family: 'Manrope';
-  font-size: 14px;
+
   ${(props) => getCss(props)}
 
   .toast {
-    background: #424242;
-    color: #ffffff;
     z-index: 3;
-    padding: 15px;
-    border-radius: 5px;
+    padding: ${(props) => props.theme.gutter};
     margin-top: 10px;
+    color: ${(props) => props.theme.white};
+    background: ${(props) => props.theme.darkestGrey};
+    border-radius: ${(props) => props.theme.borderRadius};
 
     &.toast-success {
-      color: #23621e;
-      background-color: #e8f5e9;
+      color: ${(props) => props.theme.successShades[0]};
+      background-color: ${(props) => props.theme.successShades[2]};
     }
 
     &.toast-info {
-      color: #0f62a4;
-      background-color: #e3f2fd;
+      color: ${(props) => props.theme.infoShades[0]};
+      background-color: ${(props) => props.theme.infoShades[2]};
     }
 
     &.toast-warning {
-      color: #70600c;
-      background-color: #fffddb;
+      color: ${(props) => props.theme.warningShades[0]};
+      background-color: ${(props) => props.theme.warningShades[2]};
     }
 
     &.toast-error {
-      color: #9f231a;
-      background-color: #ffebee;
+      color: ${(props) => props.theme.errorShades[0]};
+      background-color: ${(props) => props.theme.errorShades[2]};
     }
 
     .close {

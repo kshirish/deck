@@ -1,17 +1,17 @@
-const fontWeightLight = 300;
 const fontWeightRegular = 400;
 const fontWeightMedium = 500;
 const fontWeightBold = 600;
+const fontWeightBolder = 700;
 
-const fontSizeBodyTiny = 12;
-const fontSizeBodySmall = 14;
-const fontSizeBody = 16;
-const fontSizeHeading5 = 18;
-const fontSizeHeading4 = 20;
-const fontSizeHeading3 = 24;
-const fontSizeHeading2 = 32;
-const fontSizeHeading1 = 40;
-const fontSizeSuper = 48;
+const fontSizeBodyTiny = '10px';
+const fontSizeBodySmall = '12px';
+const fontSizeBody = '14px';
+const fontSizeHeading5 = '16px';
+const fontSizeHeading4 = '20px';
+const fontSizeHeading3 = '24px';
+const fontSizeHeading2 = '32px';
+const fontSizeHeading1 = '40px';
+const fontSizeSuper = '48px';
 
 const lineHeightBodyTiny = 1.3;
 const lineHeightBodySmall = 1.3;
@@ -24,10 +24,10 @@ const lineHeightHeading1 = 1.2;
 const lineHeightSuper = 1.16;
 
 export default {
-  fontWeightLight,
   fontWeightRegular,
   fontWeightMedium,
   fontWeightBold,
+  fontWeightBolder,
 
   fontSizeBodyTiny,
   fontSizeBodySmall,

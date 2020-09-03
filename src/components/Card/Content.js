@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Card from './Card';
 
 const StyledContent = styled.div`
-  padding: 15px;
+  padding: ${(props) => props.theme.gutter};
 
   ${Card}.horizontal & {
     flex: 3;

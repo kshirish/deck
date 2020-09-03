@@ -3,6 +3,17 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const LEFT = 'left';
+const RIGHT = 'right';
+const PRIMARY = 'primary';
+const SECONDARY = 'secondary';
+const OUTLINE = 'outline';
+const TINY = 'tiny';
+const SMALL = 'small';
+const MEDIUM = 'medium';
+const LARGE = 'large';
+const HUGE = 'huge';
+
 const Button = ({
   className,
   icon,
@@ -14,23 +25,21 @@ const Button = ({
   const renderContent = () => {
     if (!icon) return children;
 
-    switch (iconPosition) {
-      case 'right':
-        return (
-          <>
-            {children}
-            {icon}
-          </>
-        );
-
-      case 'left':
-        return (
-          <>
-            {icon}
-            {children}
-          </>
-        );
+    if (iconPosition === RIGHT) {
+      return (
+        <>
+          {children}
+          {icon}
+        </>
+      );
     }
+
+    return (
+      <>
+        {icon}
+        {children}
+      </>
+    );
   };
 
   return (
@@ -49,72 +58,65 @@ const Button = ({
 };
 
 const getCss = (props) => {
-  switch (true) {
-    case props.disabled:
-      return `
-        pointer-events: none;
-        opacity: 0.5;
-        cursor: not-allowed;
-      `;
-
-    case props.block:
-      return `
-        width: 100%;
-      `;
+  if (props.disabled) {
+    return `
+      pointer-events: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+    `;
   }
 };
 
 const getTypeCss = (props) => {
   switch (props.type) {
-    case 'primary':
+    case PRIMARY:
       return `
         border: none;
-        background-color: ${props.color || '#f65858'};
-        color: #ffffff;  
+        background-color: ${props.color || props.theme.primary};
+        color: ${props.theme.white};  
       `;
 
-    case 'secondary':
+    case SECONDARY:
       return `
         border: none;
         background-color: transparent;
-        color: #0098ab;  
+        color: ${props.theme.secondary};
       `;
 
-    case 'outline':
+    case OUTLINE:
       return `
         background-color: transparent;
         color: ${props.color};
-        border: 1px solid ${props.color || '#e4e4e4'};
+        border: 1px solid ${props.color || props.theme.lighterGrey};
       `;
   }
 };
 
 const getSizeCss = (props) => {
   switch (props.size) {
-    case 'tiny':
+    case TINY:
       return `
         padding: 3px 6px;
-        font-size: 10px;
+        font-size: ${props.theme.fontSizeBodyTiny};
       `;
-    case 'small':
+    case SMALL:
       return `
         padding: 5px 10px;
-        font-size: 12px;  
+        font-size: ${props.theme.fontSizeBodySmall};
       `;
-    case 'medium':
+    case MEDIUM:
       return `
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 8px 16px;        
       `;
-    case 'large':
+    case LARGE:
       return `
         padding: 12px 24px;
-        font-size: 16px;  
+        font-size: ${props.theme.fontSizeHeading5};
       `;
-    case 'huge':
+    case HUGE:
       return `
         padding: 15px 30px;
-        font-size: 20px;
+        font-size: ${props.theme.fontSizeHeading4};
       `;
   }
 };
@@ -124,16 +126,18 @@ const StyledButton = styled(Button)`
   z-index: 0;  
   cursor: pointer;
   margin-right: 5px;
-  font-weight: 500;
-  font-family: 'Manrope';
+  font-weight: ${(props) => props.theme.fontWeightMedium};
+  font-family: inherit; 
+  font-size: inherit;
+  color: ${(props) => props.theme.textPrimary}; 
   text-transform: capitalize;
-  text-decoration: none;
-  color: #212121;
+  text-decoration: none;  
   position: relative;  
-  border-radius: 5px;  
-  ${(props) => getCss(props)}
+  width: ${(props) => props.block && '100%'};
+  border-radius: ${(props) => props.theme.borderRadius};    
   ${(props) => getTypeCss(props)}
   ${(props) => getSizeCss(props)}
+  ${(props) => getCss(props)}
 
   &.button-icon-left img {
     width: 15px;
@@ -154,15 +158,16 @@ StyledButton.propTypes = {
   icon: PropTypes.element,
   disabled: PropTypes.bool,
   block: PropTypes.bool,
-  iconPosition: PropTypes.oneOf(['left', 'right']),
-  type: PropTypes.oneOf(['primary', 'secondary', 'outline']),
-  size: PropTypes.oneOf(['tiny', 'small', 'medium', 'large', 'huge']),
+  iconPosition: PropTypes.oneOf([LEFT, RIGHT]),
+  type: PropTypes.oneOf([PRIMARY, SECONDARY, OUTLINE]),
+  size: PropTypes.oneOf([TINY, SMALL, MEDIUM, LARGE, HUGE]),
   onClick: PropTypes.func,
 };
 
 StyledButton.defaultProps = {
-  type: 'primary',
-  size: 'medium',
+  type: PRIMARY,
+  size: MEDIUM,
+  iconPosition: LEFT,
 };
 
 export default StyledButton;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledPlaceholder = styled.div`
   display: inline-block;
   animation: fading 3s linear infinite;
-  background: #9e9e9e;
+  background-color: ${(props) => props.theme.darkGrey};
   border-radius: ${(props) => props.circle && '100%'};
 
   @keyframes fading {

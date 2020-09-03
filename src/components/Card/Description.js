@@ -5,7 +5,6 @@ const StyledDescription = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 1.4;
-  font-size: 14px;
 `;
 
 StyledDescription.propTypes = {

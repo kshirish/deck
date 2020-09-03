@@ -2,26 +2,25 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const getCss = (props) => {
-  switch (true) {
-    case props.active:
-      return `
-        font-weight: 600;
-        background-color: #f2f2f2;
-      `;
+  if (props.active) {
+    return `
+      font-weight: ${props.theme.fontWeightBold};
+      background-color: ${props.theme.lightestGrey};;
+    `;
   }
 };
 
 const StyledMenuItem = styled.div`
-  padding-left: 15px;
-  font-size: 14px;
+  padding-left: ${(props) => props.theme.gutter2x};
+
   cursor: pointer;
   ${(props) => getCss(props)}
 
   &:active,
   &:hover,
   &:focus {
-    font-weight: 600;
-    background-color: #f2f2f2;
+    font-weight: ${(props) => props.theme.fontWeightBold};
+    background-color: ${(props) => props.theme.lightestGrey};
   }
 `;
 

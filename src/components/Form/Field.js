@@ -2,15 +2,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledField = styled.div`
-  margin-bottom: 15px;
-  font-family: 'Manrope';
-  font-size: 14px;
+  margin-bottom: ${(props) => props.theme.gutter};
 
   label {
     display: block;
     margin-bottom: 10px;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: ${(props) => props.theme.fontWeightMedium};
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin: 5px;
   }
 
   input[type='text'],
@@ -21,18 +23,12 @@ const StyledField = styled.div`
   select {
     outline: 0;
     padding: 10px;
-    background: #ffffff;
-    border: 1px solid #e4e4e4;
-    border-radius: 5px;
+    background-color: ${(props) => props.theme.white};
+    border: 1px solid ${(props) => props.theme.lighterGrey};
+    border-radius: ${(props) => props.theme.borderRadius};
     width: 100%;
-    font-size: 14px;
     line-height: 20px;
-    box-sizing: border-box;
-  }
-
-  select,
-  textarea {
-    font-family: 'Manrope';
+    font-family: inherit;
   }
 `;
 

@@ -39,13 +39,11 @@ const StyledModal = styled(Modal)`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  font-family: 'Manrope';
-  color: #212121;
 
   .modal-dialog {
-    border-radius: 5px;
+    border-radius: ${(props) => props.theme.borderRadius};
     position: fixed;
-    background: white;
+    background: ${(props) => props.theme.white};
     height: auto;
     top: 50%;
     left: 50%;

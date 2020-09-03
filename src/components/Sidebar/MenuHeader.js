@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledMenuHeader = styled.div`
-  font-weight: 600;
+  padding-left: ${(props) => props.theme.gutter};
+  font-weight: ${(props) => props.theme.fontWeightBold};
   text-transform: uppercase;
-  color: #9e9e9e;
-  font-size: 12px;
+  color: ${(props) => props.theme.darkGrey};
+  font-size: ${(props) => props.theme.fontSizeBodySmall};
 `;
 
 StyledMenuHeader.propTypes = {

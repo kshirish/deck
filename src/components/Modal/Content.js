@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledContent = styled.div`
-  padding: 15px;
-  font-size: 14px;
+  padding: ${(props) => props.theme.gutter};
 `;
 
 StyledContent.propTypes = {

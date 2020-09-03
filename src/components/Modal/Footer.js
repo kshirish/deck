@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledFooter = styled.div`
-  padding: 15px;
+  padding: ${(props) => props.theme.gutter};
   text-align: right;
 `;
 

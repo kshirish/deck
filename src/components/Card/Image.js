@@ -19,8 +19,8 @@ const Image = ({
 const StyledImage = styled(Image)`
   img {
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: ${(props) => props.theme.borderRadius};
+    border-top-right-radius: ${(props) => props.theme.borderRadius};
   }
 
   ${Card}.horizontal & {
@@ -28,7 +28,7 @@ const StyledImage = styled(Image)`
 
     img {
       border-top-right-radius: 0;
-      border-bottom-left-radius: 5px;
+      border-bottom-left-radius: ${(props) => props.theme.borderRadius};
       border-bottom-right-radius: 0;
       height: 100%;
     }

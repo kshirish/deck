@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const MARGIN = 10;
+const TOP = 'top';
+const BOTTOM = 'bottom';
+const LEFT = 'left';
+const RIGHT = 'right';
 
 const Popover = ({
   trigger,
@@ -23,19 +27,19 @@ const Popover = ({
     let left;
 
     switch (align) {
-      case 'top':
+      case TOP:
         top = dim.top - tooltipEl.clientHeight - MARGIN * 2;
         left = dim.left + (dim.width - tooltipEl.clientWidth) / 2;
         break;
-      case 'bottom':
+      case BOTTOM:
         top = dim.top + dim.height;
         left = dim.left + (dim.width - tooltipEl.clientWidth) / 2;
         break;
-      case 'left':
+      case LEFT:
         top = dim.top + (dim.height - tooltipEl.clientHeight - MARGIN * 2) / 2;
         left = dim.left - tooltipEl.clientWidth - MARGIN * 2;
         break;
-      case 'right':
+      case RIGHT:
         top = dim.top + (dim.height - tooltipEl.clientHeight - MARGIN * 2) / 2;
         left = dim.left + dim.width;
         break;
@@ -63,21 +67,20 @@ const Popover = ({
 const StyledPopover = styled(Popover)`
   z-index: 3;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: ${(props) => props.theme.borderRadius};
   display: none;
   position: fixed;
-  font-family: 'Manrope';
-  font-size: 14px;
-  border: 1px solid #e4e4e4;
+  border: 1px solid ${(props) => props.theme.lighterGrey};
+  background: ${(props) => props.theme.white};
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 `;
 
 StyledPopover.propTypes = {
   className: PropTypes.string,
   trigger: PropTypes.oneOfType([PropTypes.node, PropTypes.element]),
-  align: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  align: PropTypes.oneOf([TOP, BOTTOM, LEFT, RIGHT]),
 };
 
-StyledPopover.defaultProps = { align: 'bottom' };
+StyledPopover.defaultProps = { align: BOTTOM };
 
 export default StyledPopover;

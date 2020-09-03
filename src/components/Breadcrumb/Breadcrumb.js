@@ -3,11 +3,9 @@ import styled from 'styled-components';
 
 const StyledBreadcrumb = styled.div`
   list-style: none;
-  margin: 15px 0;
-  padding: 15px;
-  border-radius: 5px;
-  font-family: 'Manrope';
-  font-size: 14px;
+  margin: ${(props) => props.theme.gutter} 0;
+  padding: ${(props) => props.theme.gutter};
+  border-radius: ${(props) => props.theme.borderRadius};
 `;
 
 StyledBreadcrumb.propTypes = {

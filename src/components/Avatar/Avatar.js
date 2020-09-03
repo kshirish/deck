@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+const CIRCLE = 'circle';
+const ROUNDED = 'rounded';
+
+const SMALL = 'small';
+const MEDIUM = 'medium';
+const LARGE = 'large';
+
 const Avatar = ({
   src,
   alt,
@@ -16,46 +23,36 @@ const Avatar = ({
   return <div {...props}>{initials}</div>;
 };
 
-const getCss = (props) => {
-  switch (true) {
-    case !!props.color:
-      return `
-        background-color: ${props.color};
-        color: #ffffff;    
-      `;
-  }
-};
-
 const getBorderRadius = (props) => {
   switch (props.type) {
-    case 'circle':
+    case CIRCLE:
       return `
         border-radius: 100%;      
       `;
-    case 'rounded':
+    case ROUNDED:
       return `
-        border-radius: 5px;
+        border-radius: ${(props) => props.theme.borderRadius};
       `;
   }
 };
 
 const getSizeCss = (props) => {
   switch (props.size) {
-    case 'small':
+    case SMALL:
       return `
         width: 50px;
         height: 50px;
         line-height: 50px;
         font-size: 16px; 
       `;
-    case 'medium':
+    case MEDIUM:
       return `
         width: 100px;
         height: 100px;
         line-height: 100px;
         font-size: 32px;
       `;
-    case 'large':
+    case LARGE:
       return `
         width: 150px;
         height: 150px;
@@ -65,15 +62,23 @@ const getSizeCss = (props) => {
   }
 };
 
+const getCss = (props) => {
+  if (props.color) {
+    return `
+      background-color: ${props.color};
+      color: ${props.theme.white};
+    `;
+  }
+};
+
 const StyledAvatar = styled(Avatar)`
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Manrope';
   margin-right: 5px;
-  ${(props) => getCss(props)}
   ${(props) => getBorderRadius(props)};
   ${(props) => getSizeCss(props)}
+  ${(props) => getCss(props)}
 `;
 
 StyledAvatar.propTypes = {
@@ -82,13 +87,13 @@ StyledAvatar.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   initials: PropTypes.string,
-  type: PropTypes.oneOf(['circle', 'square', 'rounded']),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  type: PropTypes.oneOf([CIRCLE, ROUNDED]),
+  size: PropTypes.oneOf([SMALL, MEDIUM, LARGE]),
 };
 
 StyledAvatar.defaultProps = {
-  type: 'circle',
-  size: 'medium',
+  type: CIRCLE,
+  size: MEDIUM,
 };
 
 export default StyledAvatar;

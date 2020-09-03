@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledMenu = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: ${(props) => props.theme.gutter2x};
 `;
 
 StyledMenu.propTypes = {

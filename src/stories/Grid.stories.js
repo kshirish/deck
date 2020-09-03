@@ -11,9 +11,7 @@ export default {
 };
 
 const COL_STYLE = {
-  fontFamily: 'Manrope',
-  fontSize: 14,
-  backgroundColor: '#f6ddd5',
+  backgroundColor: '#e4e4e4',
   marginBottom: 15,
   padding: 15,
 };

@@ -24,13 +24,12 @@ const getCss = (props) => {
 };
 
 const StyledRow = styled.div`
-  box-sizing: border-box;
   display: flex;
   flex: 1 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -${(props) => props.theme.gutter};
+  margin-left: -${(props) => props.theme.gutter};
   ${(props) => getCss(props)}
 `;
 

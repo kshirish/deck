@@ -30,35 +30,32 @@ const Tab = ({
 };
 
 const StyledTab = styled(Tab)`
-  font-family: 'Manrope';
-  font-size: 14px;
-
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-weight: 500;
+    font-weight: ${(props) => props.theme.fontWeightMedium};
     display: flex;
   }
 
   li {
-    margin: 0 15px;
-    padding: 15px;
+    margin: 0 ${(props) => props.theme.gutter};
+    padding: ${(props) => props.theme.gutter};
     cursor: pointer;
 
     &.active {
-      border-bottom: 3px solid #0098ab;
+      border-bottom: 3px solid ${(props) => props.theme.linkPrimary};
       cursor: not-allowed;
       pointer-events: none;
     }
 
     &:hover {
-      border-bottom: 3px solid #0098ab44;
+      border-bottom: 3px solid ${(props) => props.theme.linkPrimaryHover};
     }
   }
 
   .tab-pane {
-    padding: 15px;
+    padding: ${(props) => props.theme.gutter};
   }
 `;
 

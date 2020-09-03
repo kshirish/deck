@@ -20,8 +20,7 @@ export const Sizes = () => (
 
 export const Types = () => (
   <>
-    <Avatar src="https://picsum.photos/500" type="circle" />
-    <Avatar src="https://picsum.photos/500" type="square" />
+    <Avatar src="https://picsum.photos/500" />
     <Avatar src="https://picsum.photos/500" type="rounded" />
   </>
 );
@@ -32,8 +31,7 @@ export const Initials = () => (
     <Avatar initials="TW" color="#4caf50" size="medium" />
     <Avatar initials="TW" color="#4caf50" size="large" />
     <br />
-    <Avatar initials="TW" color="#4caf50" type="circle" />
-    <Avatar initials="TW" color="#e91e63" type="square" />
+    <Avatar initials="TW" color="#4caf50" />
     <Avatar initials="TW" color="#2196f3" type="rounded" />
   </>
 );

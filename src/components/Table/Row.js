@@ -7,12 +7,12 @@ import Body from './Body';
 
 const StyledRow = styled.tr`
   ${Table}.highlighted &:hover {
-    background-color: #f5f5f5;
+    background-color: ${(props) => props.theme.lightestGrey};
     cursor: pointer;
   }
 
   ${Table}.striped ${Body} &:nth-child(2n + 1) {
-    background-color: #f5f5f5;
+    background-color: ${(props) => props.theme.lightestGrey};
   }
 `;
 

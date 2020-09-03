@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.div`
   margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 20px 15px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #e4e4e4;
+  padding: 20px ${(props) => props.theme.gutter};
+  font-size: ${(props) => props.theme.fontSizeHeading4};
+  font-weight: ${(props) => props.theme.fontWeightMedium};
+  border-top-left-radius: ${(props) => props.theme.borderRadius};
+  border-top-right-radius: ${(props) => props.theme.borderRadius};
+  background-color: ${(props) => props.theme.lightestGrey};
 `;
 
 StyledHeader.propTypes = {

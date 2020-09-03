@@ -9,7 +9,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Sidebar style={{ width: 200 }}>
+  <Sidebar style={{ width: 250, backgroundColor: '#ffffff' }}>
     <Sidebar.Menu>
       <Sidebar.MenuHeader>Browse</Sidebar.MenuHeader>
       <Sidebar.MenuItem>Charts</Sidebar.MenuItem>

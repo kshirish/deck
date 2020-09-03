@@ -6,8 +6,8 @@ import Card from './Card';
 
 const StyledFooter = styled.div`
   text-align: right;
-  padding: 15px;
-  background-color: #fafafa;
+  padding: ${(props) => props.theme.gutter};
+  background-color: ${(props) => props.theme.lightestGrey};
 
   ${Card}.horizontal & {
     flex: 1;

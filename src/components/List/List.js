@@ -15,10 +15,7 @@ const List = ({
   </div>
 );
 
-const StyledList = styled(List)`
-  font-family: 'Manrope';
-  font-size: 14px;
-`;
+const StyledList = styled(List)``;
 
 StyledList.propTypes = {
   className: PropTypes.string,

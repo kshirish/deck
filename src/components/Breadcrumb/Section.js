@@ -20,11 +20,11 @@ const StyledSection = styled(Section)`
   display: inline-block;
 
   &.link {
-    color: #297cbb;
+    color: ${(props) => props.theme.linkPrimary};
   }
 
   &.active {
-    color: #616161;
+    color: ${(props) => props.theme.darkerGrey};
   }
 `;
 

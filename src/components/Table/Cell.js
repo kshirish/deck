@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import Table from './Table';
 
 const StyledCell = styled.td`
-  padding: 15px;
+  padding: ${(props) => props.theme.gutter};
   text-align: ${(props) => props.textAlign};
 
   ${Table}.bordered & {
-    border: 1px solid #e4e4e4;
+    border: 1px solid ${(props) => props.theme.lighterGrey};
   }
 
   ${Table}.compact & {

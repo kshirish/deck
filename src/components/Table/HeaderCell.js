@@ -25,13 +25,13 @@ const HeaderCell = ({
 );
 
 const StyledHeaderCell = styled(HeaderCell)`
-  padding: 15px;
-  font-weight: 600;
+  padding: ${(props) => props.theme.gutter};
+  font-weight: ${(props) => props.theme.fontWeightBold};
   text-align: ${(props) => props.textAlign};
   width: ${(props) => (props.width ? `${props.width}%` : '')};
 
   ${Table}.bordered & {
-    border: 1px solid #e4e4e4;
+    border: 1px solid ${(props) => props.theme.lighterGrey};
   }
 
   ${Table}.compact & {
@@ -58,12 +58,12 @@ const StyledHeaderCell = styled(HeaderCell)`
 
     &.ascending:after {
       display: inline-block;
-      border-top: 5px solid #333333;
+      border-top: 5px solid ${(props) => props.theme.darkestGrey};
     }
 
     &.descending:after {
       display: inline-block;
-      border-bottom: 5px solid #333333;
+      border-bottom: 5px solid ${(props) => props.theme.darkestGrey};
     }
   }
 `;
