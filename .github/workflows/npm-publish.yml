@@ -4,6 +4,14 @@
 name: Node.js Package
 
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
   release:
     types: [created]
 
@@ -27,10 +35,12 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+          scope: kshirish
       - run: npm ci
-      - run: npm publish
+      - run: npm run build
+      - run: npm publish --access public --@kshirish:registry=https://registry.npmjs.org/
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   publish-gpr:
     needs: build
@@ -42,6 +52,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

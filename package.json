@@ -1,7 +1,7 @@
 {
   "name": "@kshirish/deck",
   "description": "React toolset to build front end apps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "engines": {
@@ -83,8 +83,7 @@
   },
   "peerDependencies": {
     "react": "^16.13.1",
-    "prop-types": "^15.7.2",
-    "styled-components": "^4.2.1"
+    "prop-types": "^15.7.2"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

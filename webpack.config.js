@@ -50,13 +50,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
     alias: {
-      components: path.resolve(__dirname, './src/components'),
       react: path.resolve(__dirname, './node_modules/react'),
       'prop-types': path.resolve(__dirname, './node_modules/prop-types'),
-      'styled-components': path.resolve(
-        __dirname,
-        './node_modules/styled-components',
-      ),
     },
   },
   externals: {
@@ -69,11 +64,6 @@ module.exports = {
       commonjs: 'prop-types',
       commonjs2: 'prop-types',
       umd: 'prop-types',
-    },
-    'styled-components': {
-      commonjs: 'styled-components',
-      commonjs2: 'styled-components',
-      umd: 'styled-components',
     },
   },
   plugins: [new CleanWebpackPlugin()],
