@@ -1,5 +1,5 @@
 {
-  "name": "deck",
+  "name": "@kshirish/deck",
   "description": "React toolset to build front end apps",
   "version": "0.1.0",
   "license": "MIT",
@@ -85,6 +85,9 @@
     "react": "^16.13.1",
     "prop-types": "^15.7.2",
     "styled-components": "^4.2.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "homepage": "https://github.com/kshirish/deck/blob/master/README.md"
 }

@@ -2,19 +2,19 @@
 
 Deck is the react toolset to build front end apps.
 
-<img src="./public/logo.png" width="200" alt="Deck">
+<img src="https://raw.githubusercontent.com/kshirish/deck/master/public/logo.png" width="200" alt="Deck">
 
-<!-- ### Installation
+### Installation
 
 ```shell
-npm install deck --save
+npm install @kshirish/deck --save
 ```
 
 ### Usage
 
 ```js
-import Button from 'deck/dist/components/button';
-``` -->
+import { Button } from '@kshirish/deck';
+```
 
 ### Develop components with Storybook
 
