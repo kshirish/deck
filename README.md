@@ -7,7 +7,9 @@
 
 > Deck is the react toolset to build front end apps.
 
-<img src="https://raw.githubusercontent.com/kshirish/deck/master/public/logo.png" width="200" alt="Deck">
+See Storybook [live](https://kshirish.github.io/deck).
+
+<a href="https://www.npmjs.com/package/@kshirish/deck" target="_blank"> <img src="https://raw.githubusercontent.com/kshirish/deck/master/public/logo.png" width="200" alt="Deck"></a>
 
 ### Installation
 
