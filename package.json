@@ -1,7 +1,7 @@
 {
   "name": "@kshirish/deck",
   "description": "React toolset to build front end apps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
   "engines": {
@@ -21,7 +21,7 @@
     "build": "webpack --mode development",
     "lint": "eslint --fix ./src",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "rm -rf docs && build-storybook -o ./docs"
   },
   "pre-commit": [
     "lint"
